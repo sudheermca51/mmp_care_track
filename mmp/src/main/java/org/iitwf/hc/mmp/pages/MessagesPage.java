@@ -29,6 +29,7 @@ public class MessagesPage {
 	 * @return 
 	 */
 	public HashMap<String, String> sendMessageToAdmin(String patientName, String message) {
+		
 
 
 		HashMap<String, String> expectedHMap = new HashMap<String, String>();
