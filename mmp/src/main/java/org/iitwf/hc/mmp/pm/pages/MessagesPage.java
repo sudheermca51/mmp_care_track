@@ -1,4 +1,4 @@
-package org.iitwf.hc.mmp.pages;
+package org.iitwf.hc.mmp.pm.pages;
 
 import java.util.HashMap;
 
