@@ -4,11 +4,11 @@ import java.time.Duration;
 import java.util.HashMap;
 
 import org.iitwf.hc.lib.FrameworkLibrary;
-import org.iitwf.hc.mmp.pages.HomePage;
-import org.iitwf.hc.mmp.pages.LoginPage;
 import org.iitwf.hc.mmp.pages.MessagesAdminPage;
 import org.iitwf.hc.mmp.pages.MessagesPage;
-import org.iitwf.hc.mmp.pages.ProfilePage;
+import org.iitwf.hc.mmp.pm.pages.HomePage;
+import org.iitwf.hc.mmp.pm.pages.LoginPage;
+import org.iitwf.hc.mmp.pm.pages.ProfilePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

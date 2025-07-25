@@ -3,9 +3,9 @@ package org.iitwf.healthcare.mmp;
 import java.util.HashMap;
 
 import org.iitwf.hc.lib.FrameworkLibrary;
-import org.iitwf.hc.mmp.pages.HomePage;
-import org.iitwf.hc.mmp.pages.LoginPage;
-import org.iitwf.hc.mmp.pages.ScheduleAppointmentPage;
+import org.iitwf.hc.mmp.pm.pages.HomePage;
+import org.iitwf.hc.mmp.pm.pages.LoginPage;
+import org.iitwf.hc.mmp.pm.pages.ScheduleAppointmentPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

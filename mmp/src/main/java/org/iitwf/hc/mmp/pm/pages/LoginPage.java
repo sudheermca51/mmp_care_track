@@ -1,4 +1,4 @@
-package org.iitwf.hc.mmp.pages;
+package org.iitwf.hc.mmp.pm.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 public class LoginPage {
