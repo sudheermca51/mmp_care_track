@@ -46,8 +46,7 @@ public class SendMessagesE2E extends FrameworkLibrary {
 		 hPage.navigateToAModule("Messages");
 		 MessagesAdminPage aPage = new MessagesAdminPage(driver);
 		 HashMap<String,String> actualHMap = aPage.getMessageDetails(expectedHMap.get("subject"));
-			
-		 Thread.sleep(2000);
+		 
 			
 		WebElement element = driver.findElement(By.xpath("//span[normalize-space(text())='Logout']"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
