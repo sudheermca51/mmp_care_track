@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+		stage('Run Batch Script'){
+			steps{
+						bat '''ping www.google.com -n 5
+								dir
+								cd
+								netstat -a -n
+							'''
+			}
+		}
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: 'admin_approval_process', url: 'https://github.com/sudheermca51/mmp_care_track.git'
+
+                dir('mmp') {
+                         // To run Maven on a Windows agent, use
+                         bat "mvn -Dmaven.test.failure.ignore=true clean test"
+                }
+            }
+        }
+    }
+}
