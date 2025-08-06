@@ -1,0 +1,11 @@
+<suite name="MasterSuite" verbose="5">
+	<listeners>
+		<listener class-name="org.iitwf.hc.lib.ListenerUtility" />
+	</listeners>
+	<test name="mmpSuite">
+		<classes>
+			  <class name="org.iitwf.healthcare.mmp.ScheduleAppointmentTests"/>
+			  <class name="org.iitwf.healthcare.mmp.SendMessagesE2E"/>
+		</classes>
+	</test>
+</suite>
