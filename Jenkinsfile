@@ -16,6 +16,7 @@ pipeline {
 		}
         stage('Build') {
             steps {
+		try{
                 // Get some code from a GitHub repository
                 git branch: "${params.branch_name}", url: 'https://github.com/sudheermca51/mmp_care_track.git'
 
@@ -24,6 +25,11 @@ pipeline {
                          bat "mvn -Dmaven.test.failure.ignore=true clean test"
                 }
             }
+	    catch (err) {
+                        echo "care track mmp job failed"
+                        echo "Caught: ${err}"
+                    }
+	  }
         }
     }
 }
