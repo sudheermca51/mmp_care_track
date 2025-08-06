@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: '${params.branch_name}', url: 'https://github.com/sudheermca51/mmp_care_track.git'
+                git branch: "${params.branch_name}", url: 'https://github.com/sudheermca51/mmp_care_track.git'
 
                 dir('mmp') {
                          // To run Maven on a Windows agent, use
