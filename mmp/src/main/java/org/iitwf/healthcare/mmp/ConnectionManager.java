@@ -7,10 +7,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
-
 
 public class ConnectionManager {
 
