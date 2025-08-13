@@ -17,12 +17,12 @@
 		<maven.compiler.release>17</maven.compiler.release>
 	</properties>
 	<dependencies>
-	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>5.1.2</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -47,6 +47,13 @@
 			<artifactId>testng</artifactId>
 			<version>7.11.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -72,10 +79,10 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.5.3</version>
-					 <configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>mmpsuite.xml</suiteXmlFile>
-							</suiteXmlFiles>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>mmpsuite.xml</suiteXmlFile>
+						</suiteXmlFiles>
 					</configuration>
 				</plugin>
 				<plugin>
