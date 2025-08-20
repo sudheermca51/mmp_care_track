@@ -34,7 +34,7 @@ public class ConnectionManager {
 				Statement stmt=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				
 				//Executing the Queries
-				stmt.executeUpdate("INSERT INTO mmp.patient_data VALUES (2,'Alexander','18-07-1986')");
+				stmt.executeUpdate("INSERT INTO mmp.patient_data VALUES (3,'Alexander','18-07-1986')");
 				//stmt.executeUpdate("truncate table testDB.employee");
 				ResultSet rs = stmt.executeQuery("SELECT * FROM mmp.patient_data");
 				rs.last();
@@ -54,7 +54,7 @@ public class ConnectionManager {
 					{
 						inputArr[i][j]=rs.getString(j+1);
 						System.out.print("values:: " + inputArr[i][j] +":::"+i +":::"+j); 
- 
+						 rs.updateRow(); 
 					}
 					System.out.println();
 					i++;
