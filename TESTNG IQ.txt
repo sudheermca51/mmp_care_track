@@ -1,0 +1,425 @@
+TestNG interview questions:
+
+1. What are the features of TestNG framework?
+A. Validate the testcases using the Annotation @TEst
+   It helps to mark the testcases as Pass/Fail using Assertions
+   Parameterize the testcases
+   Grouping the testcases
+   Parallel execution of testcase
+   Execution results are reported in html format
+
+
+2. What is the order of execution of the Testcases??
+A. 
+
+   a. Alphabetical order
+   b. Add Attribute Priority for @Test to maintain the execution order
+	The lowest priority value will be executed first
+        Priority can be negative value as well
+         -2 -1 0 1 2
+   c. DependsOnMethods to maintain the order of execution
+	@Test(dependsOnMethods={"m1","m2"})
+	public void m3()
+        {
+
+        }
+	hard dependency @Test(dependsOnMethods={"m1","m2"})
+    soft depedency  @Test(dependsOnMethods={"m1","m2"},alwaysRun=true)
+			public void m3(){} -> m3 will be skipped if m1 / m2 failed
+
+
+    d. via testng.xml
+		<?xml version="1.0">
+		<suite name="sanity" verbose="5">
+			<test name="CH">
+				<classes>
+
+					<class name="org.iit.mmp.ScheduleApptTest">
+						<methods>
+						 
+							<include name="m1" />
+						 
+						</methods>
+					</class>
+					
+			</test>
+
+		</suite>
+
+
+3. Grouping of the testcases
+    a. 
+		@Test(groups={"sanity","regression"})
+		public void m1(){}
+		@Test(groups={"sanity"}
+		public void m2(){}
+
+		<groups>
+   		 <run>
+     			 <exclude name="regression" />
+      			<include name="sanity"  />
+    		</run>
+  		</groups
+
+		
+
+		 m2
+
+
+4.how do you run the failed testcases??
+
+	testng-failed.xml generated in the test-output folder
+
+
+5. order of Annotations?
+
+		@BeforeClass,@AfterClass
+
+6. SoftAssert,HardAssert
+
+7. @Listeners
+
+
+8.RetryAnalyzer
+
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+ 
+public class RerunTests implements IRetryAnalyzer {
+ 
+  private int retryCount = 0;
+  private static final int maxRetryCount = 2;
+ 
+  @Override
+  public boolean retry(ITestResult result) {
+    if (retryCount < maxRetryCount) {
+      retryCount++;
+      return true;
+    }
+    return false;
+  }
+
+
+ 9. Different ways of passing values paramters to testcases??
+ A.	
+	
+	
+	via testng.xml using @Parameters
+	@DataProvider- @Test(dataProvider="DP")
+		via xls/xlsx
+		via db
+       		via property files
+		via xml using SAX/DOM
+10. How do you validate the exceptions in Testng??
+
+       expectedException is an Attribute
+
+	@Test(expectedException=PassWordsNotMatchingException.class)
+	public void m1()
+	{
+		String s=NULL;
+		syso(s.length());
+
+	}
+
+        public class PassWordsNotMatchingException
+	{
+
+
+
+
+	}
+
+
+11. <suite name="sanity" parallel="tests/methods/class">
+
+===========
+1. What is TESTNG??
+FEatures of TEstng are as follows:
+Grouping
+Parallel Execution
+Cross Browser 
+Parameterization
+
+2. what is the content of testng.xml??
+<suite>
+	<test>
+		<classes>
+			<class name="packagname.classname">
+				<methods>
+					 
+						<include name ="m1" />
+					 
+				</methods>
+			
+			</class>
+			<class />
+		</classes>
+	</test>
+</suite>
+
+3. @Test Attributes:
+@Test(enabled=false,description="",invocationCount="3",dataProvider="DP",groups={""},
+      priority=1,dependsOnMethods={""},timeOut="3000",expectedException="")
+    @Test(expectedExceptions=java.lang.NullPointerException.class)
+	public void m1()
+	{
+		
+
+		int a=1;
+		int b=0;
+		int c = a/b;
+		
+		
+	}
+	
+	
+4. Order of Annotations:
+BeforeSuite
+	BeforeTest
+		BeforeClass
+		   BeforeGroups
+				BeforeMethod
+					@Test
+				AfterMethod
+			AfterGroups
+		AfterClass
+	AfterTest
+AfterSuite
+
+
+5. How to execute   parallely Tests in testng??
+<suite name="" paralell="tests" thread-count="3" >
+
+
+</suite>
+
+
+6. Hard Assertion and Soft Assertion
+
+
+Hard dependencies:
+--------------------
+@Test (dependsOnMethods={"Login"})- If the dependsOnMethods is failed the method will be skipped.
+
+Soft dependencies
+-------------------
+@Test(dependsOnMethods={"search"},alwaysRun=true)
+
+
+7. Assertions in Testng
+
+assertEquals
+assertNotNull
+assertTrue
+
+
+8.Soft Assert
+
+SoftAssert sa = new SoftAssert();
+sa.assertEquals("");
+sa.assertAll();
+
+
+9.Explain about your Project:
+
+Components are the tools used in the project:
+1. Selenium
+2. Java Lanaguage
+3. Eclipse IDE
+4. TESTNG
+5. MAVEN
+6. pAGE oBJECT MODEL
+7.Extent Spark Reporter
+8. Listener
+9. GITHUB
+10. JENKINS
+
+Challenges in Selenium:
+Desktop Based Applications. AUTO IT
+Captcha
+Limited Reports
+Pop-up windows
+Multiple Browser:Locators doesnt work in all the browsers.
+===============
+5 Element : same properties/attributes
+
+placeholder
+
+Xpath Axes
+Parent
+findElements
+Xpath Indexing
+
+TestNG:
+-------------
+1. Java Framework 
+2. Annotations:
+		@BeforeSuite,@BeforeTest,@BeforeClass,@BeforeMethod
+		@After
+		@Test,@Parameters,@DataProvider
+
+3. ITestListener - Interface
+4. @Test Attributes-timeOut,enabled,Priority,invocationCount,dependsOnMethods,groups,expectedException
+
+
+	@Test(expectedExceptions=java.lang.ArrayIndexOutOfBoundsException.class)
+	public void validateException()
+	{
+		int a[]=new int[5];
+		syso(a[5]);->NullPointerException
+
+
+	}
+5. Paralell execution of tests
+
+	<suite name="" paralell="tests" thread-count="3">
+
+
+
+
+
+	<suite>
+6.Generate Reports: index.html , emailable-report.html
+7.Allure Reporting,Extent Report
+8. DataProvider- xlsx,xlsx
+9. Soft Assert,HardAssert
+	Hard Assert:
+			Assert.assertTrue(false);
+			Assert.assertTrue(true);
+
+	Soft Assert:
+			SoftAssert sa = new SoftAssert();
+			sa.assertTrue(false);
+			sa.assertTrue(true);
+			sa.assertAll();
+10. Hard Dependency,Soft Dependency
+
+	public void a1()
+	{
+
+
+	}
+	@Test(dependsOnMethods={"a1"})
+	public void b1()//Skipped
+	{
+
+
+	}
+
+Soft Dependency:
+               public void a1()
+	{
+
+
+	}
+	@Test(dependsOnMethods={"a1"},alwaysRun=true)
+	public void b1() //Executed
+	{
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+   
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+ 
+    

@@ -1,0 +1,737 @@
+Java Interview Questions:
+
+1. What is difference between a local variable and global variable?
+
+public class A
+{
+
+	int i =10;	
+	public void g1()
+	{
+			int i =20;
+			syso(i);//20
+			syso(this.i);
+			syso(this);
+	}
+	syso(i);//10
+	A a1 = new A();
+	a1.g1();
+	syso(a1.i);- 10
+	A a2 = new A();
+	a2.g1();
+	syso(a2.i);==>10
+}
+
+this is a keyword useful to differnt global and local
+int i=10;
+this.globalvariable = localvariable;
+
+2. Method Overloading
+System.out.println
+Assert.assertEquals(actual,expected);
+Assert.assertEquals("","");
+Assert.
+Defintion:
+	number of arguments
+	position of arguments (int ,float) (float,int)
+	type of arguments
+
+	Syso(5);
+	Syso("Hello");
+	Syso(5.5f);
+	syso(5.5);
+
+10 fields
+	8 mandatory	
+	2 optional
+
+
+public void enterData(8 mandatory,2 optional)
+{
+
+
+}
+public void enterData(8 mandatory )
+{
+
+
+}
+public void xyz(int r)
+public void area(int l,int b)
+
+
+3. Method Overriding: Applicable in the case of inheritance
+When two methods are having same name and arguments available in the super class and subclass then the methods 
+are called as overriden methods 
+
+Superclass obj = new SubClass();
+
+obj.m1();
+
+final variables,methods, classes
+
+
+4. What is difference between default and protected acccesss modifier?
+
+default- in the package
+protected - in the package,outside the package via inheritance
+
+5. what are checked and unchecked exceptions?
+public class PasswordNotMatchException extends Exception
+
+
+	e.getMessage();
+	e.printStackTrace();
+	
+6.what are static and non static variables.
+
+7. how to handle the exceptions.
+
+8. what is a Thread? implementing a thread via example
+
+9. How to reverse a number?
+	public class ReverseNumber {
+	
+	public static void main(String[] args) {
+		
+		int i =1234,reverse=0,remainder;
+			   4321
+		while(i!=0)
+		{
+			remainder= i%10;
+			System.out.println("remainder value " + remainder);
+			reverse=reverse*10+ remainder;
+			System.out.println("reverse of the number" + reverse);
+			i=i/10;
+			System.out.println("current value   " + i);
+		}
+	}
+
+}
+
+10. what is different hashmap and hashtable
+	HashTable is synchronized and it is thread-safe
+	HashMap is non-synchronized and it is not a thread safe
+
+11. Is String mutable or immutable?
+
+	String s ="Hello";
+	String s1 = s.concat("World");
+	syso(s)->Hello
+	syso(s1)->Hello World -immutable
+
+
+=========================
+	StringBuilder & String Buffer both are  mutable
+	StringBuffer s = new StringBuffer("Hello");->Multiple Threads
+	s.concat("World");
+	syso(s) -> mutable
+
+	StringBuilder- Its not threadsafe
+	
+	public class StringEX {
+	public static void main(String[] args) {
+		
+		String s="Hello";
+		s.concat("World");   
+		System.out.println(s);//Hello
+		
+		StringBuilder sB=new StringBuilder("Hello");
+		sB.append(" World");
+		System.out.println(sB);//Hello World
+	}
+
+}
+
+12. How to sort the values in an array?
+
+13. How to print maximum number from an array?
+
+14. how to search for a particular number in an array?
+
+15. diff between while and for loop
+
+16. Read or Write a File in java
+
+17. Read or Write an Excel file in java
+
+18. how to search for a String in a File in java
+
+19. Set ,List
+
+20. Interfaces
+
+1. static vs nonstatic
+
+ 
+static - class level  
+   invoke - ClassName.methodname
+   Ex: id() ->By.id();
+   nonstatic - object level
+   invoke - object.methodname
+   get()
+   
+   driver.get();	
+
+ 
+
+static : class level:
+	By.id()
+	ExpectedConditions.visibility
+	Calendar.getInstance()
+	
+non-static: object level
+	getTitle
+
+static : cannot be overriden
+non-static: can be overriden
+
+
+2. 
+	Constructor: Object is created ..automatically invoked
+		    does not return value
+		    is same name as a class name
+		    Parameterized cons
+		    overload cons
+		     intialize the variables
+		  this
+	 public class LoginPage
+	 {
+				int i ;//Global Variable
+				int k;
+				public LoginPage(int i)
+				{
+						int j;
+						this.i=i;
+						RHS Local Variable
+						LHS Global Variable
+
+				}
+	}
+	public class C1{
+
+		int i;//Declaration
+		int rollno;
+		String name;
+		public static final int CONSTANT_VAL=12345;
+		public C1()
+		{
+			i=10;//Intialize
+			 rollno=1;
+			 name="James";
+
+		}
+		public C1(int rollno,String name)
+		{
+			 this.rollno=rollno;
+			 this.name=name;
+
+
+		}
+		public C1(int i)
+		{
+
+			this.i = i;
+		}
+		psvm()
+		{
+			C1 c = new C1();
+			syso(c.i);
+			
+			C1 c1 = new C1(20);
+			syso(c1.i);
+
+			C1 c1 = new C1(30);
+			syso(c1.i);
+			Student s1 
+			C1 c2 = new C2(1,"James");
+			C1 c3 = new C1(2,"John");
+
+		}		
+
+	}
+
+
+	Method:
+		   call the method explicitly
+
+	
+3.
+	String methods
+
+
+ split(),replace,charAt(index i),trim(),length(),equals(),contains(),toLowerCase(),compare()
+	
+          String s = "125$";
+	s.replace("$","").trim().equals()
+
+	String s = "Selenium";
+	String revString;
+	length - 8
+	index - 0 to 7
+		
+	"muineleS"
+
+	for(int i =s.length()-1;i>0;i--)
+	{
+
+		char ch = s.charAt(i);
+		revString = revString+ch;
+
+	} 
+	if(revString.equals(s))
+	{
+
+
+	}
+
+	List:
+		1000 
+			Alphabetical
+			ABC
+			BAC
+			CAB
+
+4. System,String,HashMap,HashTable,Date,File,FIS,FOS,BR,BW,Thread,AL,Vector,LL,TS,LHS,
+   SimpleDateFormat,Exception,NPE,AE,FNE,IO,Wrapper Classes,Calendar
+   java.lang.Math
+
+
+	HashMap
+
+5. OOPs concepts:
+	Inheritance:
+		Diff Types of Inheritance:
+			Single
+			MultiLevel
+			Multiple Inheritance not possible in java
+
+	Advantages:
+		Reusability
+		Avoid duplication of code
+		Relationship between superclass and subclass
+
+		public class Vehicle{
+
+		}
+		public class Car extends Vehicle{
+
+
+		}
+		Car is-a Vehicle
+
+		ChromeDriver is-a RemoteWebDriver
+	Abstraction:
+		abstract method
+		public abstract class Car{
+
+			public abstract void engine();
+			public void speed()
+			{
+
+			}
+		}
+		public class DieselCar extends Car
+		{
+
+			public void engine(){
+
+
+			}
+		}
+	Polymorphism
+		polymorphism:
+			method overloading:
+				public void area(int)
+				public void area(float)
+				public void area(int ,float)
+				public void aea(float,int)
+				public void area(int,int,int)
+			Constructor Overloading
+				File f = new File();
+	method overriding
+	Encapsulation
+	
+Interface
+Exceptions
+		
+
+Interface Vs Abstract Class:
+
+Interface:
+	 abstract & static methods
+
+Abstract Class:
+	 abstract & non static & static methods
+
+	public void speed()
+	{
+
+	}
+	public abstract void engine();
+	
+
+public class ClassName
+
+public interface InterfaceNAme
+
+6. List , Set , Map
+
+
+7. File Operations
+
+public class B{
+	
+	public void println()	
+	{
+
+	}
+
+}
+
+
+
+public class A
+{
+	public static int i ;
+	public  static  void m1()
+	{
+
+	}
+
+	class B{
+
+
+
+	}
+
+}
+	A.i
+	A.m1()
+	A.B inner = new A.B();
+	inner.println();
+	
+	driver.manage().timeOuts().implicitlyOut();
+
+
+
+ 
+   
+   
+ 2. what is the difference between a method and a constructor??
+ 
+ constructor:
+ Constructors are mainly useful to intiliaze variables
+ default constructor: Create an object, this will be invoked.
+ Parameterized constructor: Create an object pass the parameters, this will be invoked
+ if we define only parameterized constructor in the class,you cannot create a object without passing parameters
+ Constructors can be overloaded
+ Constructors doesnt return a value
+ super is the keyword useful to invoke the parent class constructor
+ this keyword is useful to refer the current class instance.
+ 
+ public A{
+
+		A(int i)
+		{
+		
+		
+		}
+
+
+  } 
+ 
+ pubic class testA{
+	@Test
+	public void validateA()
+	{
+			A a1 = new A();
+	
+	}
+ 
+ 
+ 
+ }
+ FileInputStream fis = new FileInputStream();
+
+----------------------------------
+Example 2:
+
+	class A{
+		int i;
+		public A()
+		{
+		
+				this.i = 20;
+				syso(this);
+		}
+		public void display()
+		{
+				A a1 =new A();
+				syso(a1.i);
+				A a2 = new A();
+				syso(a2.i);
+		}
+	}
+---------------------------------------------------------------------------
+
+3. what are the different methods in the string class?
+
+A. equals,contains,trim,length,substring,equalsIgnoreCase
+   charAt(index i),replace(),compareTo(),split(),
+   
+4. What are the different java classes which are mostly used in the programs?
+
+	Calendar
+	Date
+	SimpleDateFormat
+	String,StringBuffer,StringBuilder
+	Random
+	HashMap,LinkedHashMap
+	ArrayList
+	HashSet
+	Wrapper Classes - Integer
+	IO Operatiosn - File,FIS,FOS,BR,BW
+	Math
+	System
+	java.lang.Object
+	Exception - ClassNotFound,IOException,SQLException,ArrayIndexOutofBoundsException,NPE,ArithmeticException,Numberformatexception
+	Thread
+	int a[] =new int[10];
+------------------------------------------------------------------------------------------
+  
+
+invoke:
+	
+
+static - final
+non-static - not final
+
+static : class level:
+	By.id()
+	ExpectedConditions.visibility
+	Calendar.getInstance()
+	
+non-static: object level
+	getTitle
+
+static : cannot be overriden
+non-static: can be overriden
+
+2. 
+	Constructor: Object is created ..automatically invoked
+		    does not return value
+		    is same name as a class name
+		    Parameterized cons
+		    overload cons
+		     intialize the variables
+		  this
+	public class C1{
+
+		int i;
+		public C1()
+		{
+			i=10;
+
+		}
+		public C1(int i)
+		{
+
+			this.i = i;
+		}
+		psvm()
+		{
+			C1 c = new C1();
+			syso(c.i);
+			
+			C1 c1 = new C1(20);
+			syso(c1.i);
+
+			C1 c1 = new C1(30);
+			syso(c1.i);
+
+		}		
+
+	}
+
+
+	Method:
+		   call the method explicitly
+
+	
+3. split(),replace,charAt(index i),trim(),length(),equals(),contains(),toLowerCase(),compare()
+	
+
+	String s = "Selenium";
+	String revString;
+	length - 8
+	index - 0 to 7
+		
+	"muineleS"
+
+	for(int i =s.length()-1;i>0;i--)
+	{
+
+		char ch = s.charAt(i);
+		revString = revString+ch;
+
+	} 
+	if(revString.equals(s))
+	{
+
+
+	}
+
+	List:
+		1000 
+			Alphabetical
+			ABC
+			BAC
+			CAB
+
+4. System,String,HashMap,HashTable,Date,File,FIS,FOS,BR,BW,Thread,AL,Vector,LL,TS,LHS,
+   SimpleDateFormat,Exception,NPE,AE,FNE,IO,Wrapper Classes,Calendar
+
+
+	HashMap
+
+5. OOPs concepts:
+	Inheritance:
+		Diff Types of Inheritance:
+			Single
+			MultiLevel
+			Multiple Inheritance not possible in java
+
+	Advantages:
+		Reusability
+		Avoid duplication of code
+		Relationship between superclass and subclass
+
+		public class Vehicle{
+
+		}
+		public class Car extends Vehicle{
+
+
+		}
+		Car is-a Vehicle
+
+		ChromeDriver is-a RemoteWebDriver
+	Abstraction
+	Polymorphism
+	Encapsulation
+	
+Interface
+Exceptions
+		
+
+Interface Vs Abstract Class:
+
+Interface:
+	 abstract & static methods
+
+Abstract Class:
+	 abstract & non static & static methods
+
+	public void speed()
+	{
+
+	}
+	public abstract void engine();
+	
+
+public class ClassName
+
+public interface InterfaceNAme
+
+6. List , Set , Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,549 @@
+1. how to perform drag and drop in Selenium?
+
+Actions action = new Actions(driver);
+action.clickAndHold(WE);
+action.moveToElement(WE);
+action.release(WE);
+action.build().perform();
+----------------------
+action.dragAnddrop(WE,WE);
+
+right click in mouse actions-action.contextClick(WE);
+2. how to switch to a frame?[try the frames concept on Rediff.com]
+	 frame
+iframe
+	driver.switchTo().frame(int index/ framename/frameid)
+		driver.getTitle()/find an element
+	wait.unil(ExpectedConditions.frameTobeSelected());
+	NoSuchFrameException
+
+	driver.switchTo().defaultContent();
+
+3. how to handle the staleElementReferenceException in Selenium?
+   https://total-qa.com/exceptions-selenium-exceptionsjava-exceptionsexception-handling/
+
+	WebElement e = driver.findElement(By.id("username");
+	driver.findelement(By.linkText("continue"));
+	e.sendKeys("");
+
+
+	WebElement e = driver.findElement(By.id("username");
+	//perform an operation due to this the page is refreshed
+	driver.navigate().refresh();
+	e=driver.findElement(By.id("username");
+	e.sendKeys("");
+	
+	try{
+			driver.findElement
+	}
+	catch(Exception e)
+	{
+			syso(e.getMessage());
+			driver.findElement
+	}	
+
+	for(;;)
+	WebDriver driver =new ChromeDriver();
+	finally{
+
+
+	}
+
+4. what are different java clases available in Selenium?
+
+   RemoteWebDriver,FirefoxDriver,Chrome,Internet,Actions,WebDriverManager,Select,ExpectedConditions
+
+5. How to handle timeouts?
+	https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver
+	FluentWait:
+	30/2 -default  = 15 Intervals    
+					NoSuchElement -Ignoring
+	WebDriverWait: 30/5 -default  = 6 Intervals -Explicit Wait     
+					
+	
+
+6.locators
+	id
+name
+className
+tagName
+xpath
+css
+linktext
+partiallinkText
+7. Select class in Selenium
+	 all list of options- select.getOptions();
+
+8. findElements-all th elements,size,get()
+
+9.Grid
+
+10. Takescreenshot & JavascriptExecutor   
+
+11. Diff between findElement vs findElements
+
+12. what is the difference between absolute and relative Xpath??
+
+Absolute:
+	starts with forward slash - /
+
+Relative:
+	starts with two forward slahes -//
+
+
+How do we identify the alert in  a webpage??
+	Alrt alrt=		driver.switchTo().alert();
+	alrt.getText();
+	alrt.accept();
+	alrt.dismiss();
+
+
+13. How to Swtich to Frame/Iframe??
+<html>
+	<frameset>
+		<frame>
+			<html>
+
+	driver.switchTo().frame(framename or ID)
+				index
+			      (WE)
+
+
+14. How to switch to Window??
+parent
+change the focus to child
+	driver.switchTo().window(String windowName)
+	
+
+	Admin Module
+			Open Patient Module
+
+
+15. How do we fetch the Text displayed in thewebpage in decimal format??
+
+<tr>
+	<td>ABB : 36.50$</td>
+
+String text = driver.findElement().getText().replace("$"," ").trim();
+String strArr[]=text.split(":");
+syso(Double.parseDouble(strArr[1]));
+
+
+
+16. How do we get the Days in the Listbox
+https://www.facebook.com/reg/?rs=2
+
+Select 
+
+17. How do we validate the today's date is getting displayed in the facebook page??
+String day = "09";
+String month="OCT";
+String year="2020"
+
+String actualDate = day+"/"+month+"/"+year;
+
+Date d = new Date();
+SimpleDateFormat sdf = new SimpleDateFormat("dd/mon/yyyy");
+String expected=sdf.format(d.getDate());
+
+if(actual.equals(expected))
+
+18. How do you convert an Xpath to CSS
+
+	//table[@id='cart']/tr[1]/td[2]/input[@id='username']
+
+	@special character not require
+	// not required
+	#cart>tr:nth-of-type(1)>td:nth-of-type(2)>input#username
+
+Selenium :
+		automation tool useful automating the webapplications
+		API used in scripting the program via Eclipse
+		Ad: cross browser testing , script in multiple lang
+
+
+19. what are the different components available in selenium?
+	IDE
+	WEBDRIVER
+	RC - DEPRECATED
+	GRID- platform - Linux,Windows,MAC 
+
+
+20. What is the WebElement method used to fetch text available in the browser?
+	WebElement e = ;
+	e.getText();
+	
+	https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebElement
+
+https://javadoc.io/doc/org.seleniumhq.selenium/selenium-api/2.50.1/org/openqa/selenium/WebElement.html
+21. Convert the the following xpath into CSS
+	//table[@id="students"]/tr/td/input[3]
+
+	   table#students>tr>td>input:nth-of-type(3)
+
+22. How to submit a form in Selenium??
+	<form >
+
+
+		<input type="submit" onclick="validateData()" />
+	</form>
+
+	submit() method
+
+23. diff between explicit and implicit and Thread.sleep
+
+
+24. what is the difference between  findElement and findElements()
+
+	NoSuchElementException  	size is zero
+
+25. What is the java class available in Selenium useful to perform Mouse and KEyboard actions?
+	Actions class
+	Action action = new Actions(driver);
+	Actions action = new Actions(driver);
+	action.moveToElement
+	action.dragAnddrop(source,destination);
+	action.doubleClick();
+	action.contextClick();
+	action.sendKeys
+	action.KeyDown(Keys.SHIFT);
+	action.sendKeys("selenium");
+	action.KeyUp(Keys.SHIFT);
+
+	SELENIUM
+
+26. how do you switch to a frame/window/alert?
+
+	driver.switchTo().frame(int index)
+	driver.switchTo().frame(String id/name)
+	driver.switchTo().window(String windowhanle))
+	driver.switchTo().alert();
+
+27. What is the method used to launch a new browser and navigate to the url?
+	Navigation Methods
+
+	driver.navigate().to("http://");
+
+28. What is the method used to fetch all the options in the Listbox?
+
+
+	List<String> allOptions = select.getOptions();
+
+29. What are the WebElement methods useful to validate the element is displayedi n the screen.?
+	
+	isDisplayed()	
+	isSelected()
+	isEnabled()
+
+		form -> 10 fields -> button - disbaled
+
+30. e.getAttribute("value");
+
+	<input id name class maxlength type value="Enter text" />
+
+31. what is the locator used for identifying the links availble in the webpage?
+
+		linkText()			
+		partialLinkText()
+
+32. how do you handle the element which are having dynamic attribute values?
+	
+
+
+		attribute value : startswith a constant - startswith()
+		identify the parent and navigate to child
+		index
+		Xpath Axes Locator
+		
+
+		tr
+
+		Firstname	Textbox => id = "1245kjalksjgdas" 
+
+		//label[text()='Firstname']/following-sibling::input
+
+
+		//label[contains(text(),'Username:')]/following-sibling::input
+
+33. Xpath Functions:
+		startsWith()  
+		text()
+		contains()
+		last()
+		position()
+		count()
+
+Exceptions:
+	NoSuchElementException
+		unable to locate:properties
+		timeout
+		element is in the frame
+	StaleElementReferenceException
+	DOM
+		WebElement e = driver.findElement("");
+
+		driver.navigate().refresh();
+	Document Object Model - DOM
+	e= driver.findElement("");
+	e.clear();
+	
+	Element
+
+                 ExplicitWait:
+			timeout:30second
+
+
+	FluentWait:
+			pollforevery 15 seconds.ignore theexception
+			
+  ===============
+  
+1. what is your regression testing strategy? how you performed regression testing?
+
+2. You receive a 404 error...how would you troubleshoot that? do you capture logs? How would you capture logs?
+  logs...
+
+3. what is the different between Abstraction and Encapsulation?
+
+4. How do you handle AJAX calls in selenium webdriver?
+
+5. Today you came to office and try to login into the application with same username and  password 
+which it was working fine yesterday but today you are not able to login. 
+How would you debug? What are the ways you approach?
+	Reason : Network connection issue,Login Details Expired,Account locked,Multiple logins
+
+6. Explain the syntax WebDriver driver = new FirefoxDriver();
+		WebDriver is an interface.. 
+		FirefoxDriver is a class which implements webdriver interface...
+
+7. When do you use Throws and Throw in exception handling?
+		
+		//dev
+		public void verifyPassword(String password,String retypepassword)  throws PasswordNEException
+		{
+			if(!(password.equals(retypepassword))
+			{
+				 
+				throw new PasswordNEException();
+				
+			}
+
+		}
+
+		//end user..
+		try{
+		verifyPassword("welcome","welcome123");
+		}
+		catch(Exception e)
+		{
+
+		
+=====================
+1. What is the difference between list and set, findelement and findelelments
+
+list is a collection useful to store duplicates
+list is index based
+In selenium findElements(By) returns List<WebElements>
+MultipleCheckbox.html
+
+
+
+Set is a collection useful to store unique objects
+Set is not index based so you cannot retrieve elements using index
+In Selenium driver.getWindowHanles() returns Set of Windownames
+To retrieve elements from set we have to use Enhanced for loop
+
+for(String s: set)
+{
+	syso(s);
+}
+
+Diff between findElement & findElements
+findElement returns an single WebElement
+findElement throws an NoSuchElementException when it is unable to identify the element
+findElement always selects the first point in the list of matching elements
+
+findElements returns an List of WebElements
+findElements returns empty size means size is zero when it is unable to identify the element
+findElements returns all the list of matching elements
+
+ 
+2. Exception handling
+try/Catch useful for us to continue with execution.
+throws useful to terminate the execution becoz the jvm catches the exception.
+ 
+3. What is remote webdriver and where do we use it
+RemoteWebDriver is a java class useful to execute the code in a remote machine.
+This can be used in Grid.
+ 
+4. When xpath cannot be used
+If id,name,className,TagName,cssSelector available,, we will not use xpath.
+Why? xpath is time taking activity.
+
+ 
+5. Difference between interface and abstract class
+Interface contains full of abstract methods.
+All the methods in the interface are immplmeneted in a class.
+WebDriver is an interface in selenium implemented in FirefoxDriver Class
+
+Abstract class contains combination of concrete and abstract methods.
+We cannot create an instance of abstract class.
+So, we have to extend the methods in the abstract class to the subclass.
+By is an abstract class in selenium.
+driver.findElement(By.id("username")).sendKeys("username");
+
+ 
+6. Annotations in testng??
+@Test Attributes - enabled,priority,description
+@BeforeMethod,@AfterMethod
+@BeforeClass,@Afterclass
+@Parameters
+@DataProvider
+ 
+7. problems or challenges faced when automating with selenium
+Locators-Some of the locators works fine in FF, the same locators will not work on other browsers.
+Synchronization in our scripts -
+Implicit
+Explicit Wait
+Suppose the properties of the elements in webpage or keep on changing
+Desigining the framework
+
+ 
+8. My day to day routine as a automation tester in agile(for my last project) and how did i plan for it.
+Automate the scripts for the new functionality 
+Perform Sanity & Regression
+Verify the results
+Report bugs
+Attending the scrum meetings
+Participated in sprint planning & retroscpective
+
+
+Many questions were based on page object model framework like how to design it and its advantages
+
+http://image.slidesharecdn.com/dslpageobjectandseleniumawaytoreliablefunctionaltests-110227130737-phpapp01/95/dsl-page-object-and-selenium-a-way-to-reliable-functional-tests-21-728.jpg?cb=1298812362
+
+LoginPAge
+RegisterAPatient
+FindAPatient
+ScheduleAppointmentPage
+CancelAppointmentPage
+
+--------------------------------------
+Action Items:
+----------------
+Sample Resume
+Grid video
+Jenkins
+Maven
+
+http://tobeanexpert.blogspot.in/2015/04/QA-Selenium-Automation-Sample-Resume.html
+Interview Questions link->http://software-testing-tutorials-automation.blogspot.in/2014/01/selenium-webdriver-interview.html
+
+Java Website for Practise->http://www.programmr.com/zone/java
+
+-------------------------------------
+
+Selenium is a functional testing tool. You test the UI
+SOAPUI its a backend you test the operations.
+
+http://www.soapui.org/rest-testing/understanding-rest-parameters.html
+WebService is an operation which perform some task
+getAccountBal()
+getAccountDetails()
+
+SOAPUI mainly useful for testing webserivces
+Rest & SOAP 
+
+REST(Representational State Transfer) are mainly database operations. get,post
+SOAP (Simple Object Access Protocol)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	 
+  
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+ 
+
+
+
+
+https://demo.openmrs.org 
+Admin/Admin123
+
+Listbox
+
+
+
+
+
+
+
+
+

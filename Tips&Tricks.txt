@@ -1,0 +1,19 @@
+Tips & Tricks
+	Real Time work experience 
+	Practise - Apply for job
+	Experienced Resource 
+	
+	3+ years of gap 
+	3 -4 projects in the resume
+	Apply for jobs - specific area-Indeed.com,Elance.com,Stackoverflow,glassdoor,Linkedin
+	Goal1-Get more interviews 
+	Goal2-Update the IQ 
+	Goal3-Practise the IQ 
+	
+	
+	Xpath - Dynamic locators
+	starts-with
+	Xpath Axes locators 
+	rich text Firstname : textbox - dynamic id 
+	parent 
+	
