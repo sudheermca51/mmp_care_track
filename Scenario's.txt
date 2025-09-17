@@ -1,0 +1,31 @@
+Patient Module
+-------------------
+	Login 
+	Schedule Appointment
+	Edit Profile
+	Information
+	Send Messages 
+	Logout 
+	Register
+	
+	
+Admin Module 
+--------------------
+
+1. 	Updated values of the Profile visible under the module 
+			patients -> search for SSN -> click on the patient name
+			validate all the details
+				ssn,address,firstname,lastname
+				
+2. Send MEssages from Patient module to be displayed 
+	messages -> patient name,reason,date
+	
+3. Register the patient 
+	users -> approved -> login successful
+		  ->rejected  -> login not successful 
+		  ->pending ->   login not successful
+		  
+4.
+	
+	
+	
